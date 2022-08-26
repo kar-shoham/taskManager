@@ -8,11 +8,7 @@ let getTasks = async() => {
     let t = await response.json()
     return t
 }
-let id = 0
-getTasks()
-.then(d =>{
-    id = d.data.length+1
-})
+
 
 
 getTasks()
@@ -36,6 +32,7 @@ getTasks()
 
 
 btn.addEventListener('click', (e) => {
+    let id = Math.floor(Math.random()*1000)
     if(inputField.value === ""){
         console.log("Empty input field")
         return
@@ -84,6 +81,9 @@ list.addEventListener('click', (e) => {
             console.log(`deleted data of id:${idToDelete}`)
         })
         .catch(err => console.log(err))
+    }
+    else if(e.target.classList.contains('editBtn')){
+        console.log("Hello World")
     }
 })
 
