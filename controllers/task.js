@@ -1,13 +1,6 @@
 let Tasks = require('../Tasks')
 let getAllTasks = async(req, res) => {
     let allTasks = await Tasks.find()
-    allTasks = allTasks.map(x =>{
-        let toReturn = {
-            taskName: x.taskName,
-            id: x.id
-        }
-        return toReturn
-    })
     if(allTasks.length)res.json({success: true, data: allTasks})
     else res.json({success: false, data: []})
 } 
@@ -32,10 +25,11 @@ let createTask = async(req, res) => {
 }
 let updateTask = async(req, res) => {
     let {id} = req.params
-    let {tName} = req.body
+    let {tName, comp} = req.body
     let task = await Tasks.where('id').equals(+id).limit(1)
     task = task[0]
-    task.taskName = tName
+    if(tName) task.taskName = tName
+    if(comp !== null) task.completed = comp
     await task.save().then(() => {
         console.log("db updated...")
     })

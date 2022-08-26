@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -7,16 +10,88 @@
     display: flex;
     height: 100vh;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
 }
 .box{
     background-color: #FFFFFF;
+    width: 30vw;
+    position: absolute;
+    top: 200px;
+    left: 35vw;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 15px;
+    box-shadow: 5px 3px 3px black;
+}
+
+
+h1{
+    padding: 20px 0 20px 0;
+    font-size: 3vw;
+}
+input{
+    width: 12vw;
+    height: 1.5vw;
+    font-size: 20px;
+    margin: 5px 0 20px 0;
+}
+.btn{
+    background-color: #5735F7;
+    height: 1.6vw;
+    width: 5vw;
+    border: 0px solid black;
+    color: #FFFFFF;
+    /* font-weight: 500; */
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+ul{
+    position: absolute;
+    top: 400px;
+    width: 26vw;
+    left: 37vw;
+    list-style: none;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+}
+li{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    /* background-color: aqua; */
+    padding: 0 20px 0 20px;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    display: grid;
+    grid-template-columns: 21vw 2vw 2vw ;
 }
 
 .deleteBtn{
     background-color: red;
+    width: 22px;
+    height: 22px;
+    background-image: url('./images.jpeg');
+    background-size: cover;
+    border-width: 0;
 }
 .editBtn{
     background-color: blue;
+    width: 22px;
+    height: 22px;
+    background-image: url('./tick.jpg');
+    background-size: cover;
+    border-width: 0;
+}
+.completed{
+    text-decoration: line-through;
+}
+.deleteBtn:hover{
+    cursor: pointer;
+}
+.editBtn:hover{
+    cursor: pointer;
+}
+.btn:hover{
+    cursor: pointer;
 }
